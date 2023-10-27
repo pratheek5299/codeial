@@ -4,6 +4,7 @@ const app = express();
 //by default port number is 80
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts'); 
+const db = require('./config/mongoose');
 app.use(express.static('./assests'))
 app.use(expressLayouts);
 
