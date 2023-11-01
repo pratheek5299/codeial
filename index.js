@@ -1,12 +1,16 @@
 const express = require('express');
 const app = express();
-
+// get cookies
+const cookieParser = require('cookie-parser');
 //by default port number is 80
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts'); 
 const db = require('./config/mongoose');
 app.use(express.static('./assests'))
-app.use(expressLayouts);
+app.use(expressLayouts);    
+
+app.use(express.urlencoded());
+app.use(cookieParser());
 
 //extract style and scripts into the layout
 app.set('layout extractStyles', true);
