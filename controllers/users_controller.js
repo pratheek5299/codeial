@@ -1,8 +1,22 @@
 const User = require('../models/user');
 module.exports.profile = function(request,response){
-    return response.render('user_profile',{
-        title: 'User Profile'
-    })
+    let userCookie = request.cookies.user_id;
+    console.log(userCookie)
+    if (userCookie){
+        User.findById(userCookie).then(function(user){
+            // send user data
+            return response.render('user_profile',{
+                title: 'User Profile',
+                user_data: user
+            })
+        }).catch(function(err){
+            if(err){
+                console.log('Error in finding the user during signing in');
+            }
+        })     
+    }else{
+        return response.redirect('/users/sign-in')
+    }
 }
 
 //render the sign up page
@@ -56,5 +70,34 @@ module.exports.create = function(request, response){
 
 //sign in and create as session for the user
 module.exports.createSession = function(request, response){
-    //todo later
+    //steps to authenticate the user
+    //find the user
+    User.findOne({email: request.body.email}).then(function(user){
+        // handle user found
+        if (user){
+            // handle password which don't match 
+            if (user.password != request.body.password){
+                return response.redirect('back');
+            }
+            // handle session creation
+            response.cookie('user_id', user._id);
+            console.log(user.id)
+            console.log(user._id);
+            return response.redirect('/users/profile');
+        }else{
+            //handle user not found
+            response.redirect('back');
+        }
+    }).catch(function(err){
+        if(err){
+            console.log('Error in finding the user during signing in');
+            return;
+        }
+    })
+  
+}
+
+module.exports.signOut = function(request, response){
+    response.clearCookie('user_id');
+    return response.redirect('back');
 }

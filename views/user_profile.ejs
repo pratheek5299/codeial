@@ -1,2 +1,7 @@
 <link rel="stylesheet" href="/css/user_profile.css">
 <h1>User /Profile Page</h1>
+<% if (user_data) {%>
+    <p>User Email: <%= user_data.email %></p>
+    <p>User Name: <%= user_data.name %></p>
+<%}%>
+<a href="/users/sign-out">Sign Out</a>
