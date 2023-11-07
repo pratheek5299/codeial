@@ -1,6 +1,18 @@
-body{
-    margin: 0;
-    /* text-align: center; */
-    padding-top: 40px;
-    background-color: aqua;
+body {
+  margin: 0;
+  /* text-align: center; */
+  background-color: lightcyan;
+}
+
+body #main-body {
+  padding-left: 10px;
+}
+
+body #main-body form button {
+  background-color: slateblue;
+  border: 0px;
+  color: white;
+  height: 25px;
+  width: 80px;
+  cursor: pointer;
 }

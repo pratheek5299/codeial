@@ -1,0 +1,22 @@
+header {
+  background-color: blue;
+  color: white !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+header ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  width: 160px;
+  justify-content: space-between;
+}
+
+header ul a {
+  color: white;
+  text-decoration: none;
+}
