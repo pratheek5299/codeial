@@ -2,8 +2,23 @@
 
 <section id="feed-posts">
     <h4>Posts</h4>
-    <form id="new-post-forms" action="" method="POST">
-        <textarea name="content" cols="30" rows="3"></textarea>
+    <form id="new-post-forms" action="/posts/create" method="POST">
+        <textarea name="content" cols="30" rows="3" placeholder="Type Here..."></textarea>
         <input type="submit" value="Post">
     </form>
 </section>
+
+<h3>Posts:</h3>
+    <ul>
+        <%for (let i of all_posts) {%>
+            <li>
+                <p>
+                    <%= i.content%>
+                </p>   
+                <p>
+                    - by <%= i.user.name %>
+                </p>
+            </li>
+        <%}%>
+    </ul>
+
