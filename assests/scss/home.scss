@@ -1,0 +1,6 @@
+#home-container{
+    overflow: auto;
+}
+#home-container::-webkit-scrollbar{
+    display: none;
+}

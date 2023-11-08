@@ -6,6 +6,8 @@ body {
 
 body #main-body {
   padding-left: 10px;
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 body #main-body form button {
