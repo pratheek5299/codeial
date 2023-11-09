@@ -1,7 +1,11 @@
 footer{
     background-color: aquamarine;
-    position: fixed;
-    top: 89vh;
-    width: 100vw;
+    // position: fixed;
+    // top: 89vh;
+    // width: vw;
     padding-left: 10px;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }

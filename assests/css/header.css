@@ -5,10 +5,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding-left: 10px;
-  padding-right: 10px;
-  position: fixed;
-  top: 0px;
-  width: 99vw;
+  padding-right: 30px;
 }
 
 header ul {

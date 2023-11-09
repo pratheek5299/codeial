@@ -1,6 +1,12 @@
 #home-container{
     overflow: auto;
-}
-#home-container::-webkit-scrollbar{
-    display: none;
+    #feed-posts{
+        #new-post-forms{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            // height: 130px;
+            justify-content: space-between;
+        }
+    }
 }
