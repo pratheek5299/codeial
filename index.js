@@ -26,6 +26,8 @@ app.use(expressLayouts);
 
 app.use(express.urlencoded());
 app.use(cookieParser());
+//make the uploads path available to the browser
+app.use('/uploads/', express.static(__dirname + '/uploads'));
 
 //extract style and scripts into the layout
 app.set('layout extractStyles', true);

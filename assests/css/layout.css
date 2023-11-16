@@ -18,3 +18,7 @@ body #main-body form button {
   width: 80px;
   cursor: pointer;
 }
+
+body img {
+  margin-bottom: 20px;
+}
