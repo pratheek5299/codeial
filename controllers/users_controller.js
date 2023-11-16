@@ -1,8 +1,22 @@
 const User = require('../models/user');
 module.exports.profile = function(request,response){
-    return response.render('user_profile',{
-        title: 'User Profile'
-    })
+    User.findById(request.params.id).then(function(user){
+        return response.render('user_profile',{
+            title: 'User Profile',
+            profile_user:  user
+        });
+    });
+
+}
+
+module.exports.update = function(req, res){
+    if(req.user.id == req.params.id){
+        User.findByIdAndUpdate(req.params.id, req.body).then(function(user){
+            return res.redirect('back');
+        });
+    }else{
+        return res.status(401).send('Unauthorized');
+    }
 }
 
 //render the sign up page
@@ -62,14 +76,17 @@ module.exports.create = function(request, response){
 
 //sign in and create as session for the user
 module.exports.createSession = function(request, response){
+    request.flash('success', 'Logged in successfully'); //(type, message)
     return response.redirect('/')
 }
 
 module.exports.destroySession = function(req, res, next){
+    
     req.logout(function(err){
         if (err){
             return next(err);
         }
+        req.flash('success', 'You have logged out'); //(type, message)
         return res.redirect('/')
     });// passport give the function
     

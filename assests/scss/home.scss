@@ -1,6 +1,14 @@
+h1{
+    text-align: center;
+}
 #home-container{
+    display: flex;
+    // justify-content: space-evenly;
     overflow: auto;
     #feed-posts{
+        width: 70%;
+        padding: 10px;
+
         #new-post-forms{
             display: flex;
             flex-direction: column;
@@ -8,5 +16,12 @@
             // height: 130px;
             justify-content: space-between;
         }
+
+    }
+    #user-friends{
+        width: 30%;
+        padding: 10px;
+        border: 1px solid lightgray;
+        height: 100vh;
     }
 }
