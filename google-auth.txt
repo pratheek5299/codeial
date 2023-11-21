@@ -1,0 +1,9 @@
+Client ID:
+
+456947781353-nuog80m2kdk5tqks38irvbvljjqqpes9.apps.googleusercontent.com
+
+*****************************************************************************************************
+
+Client Secret:
+
+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

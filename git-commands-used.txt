@@ -1,0 +1,6 @@
+git add .                       => used to save all changes
+git commit -m 'Comments'        => used to commit all changes with a Comments
+git status                      => gives all the files need to be committed
+git log                         => gives the logs of all the commits
+git checkout -b 'new-branch'    => creates a new branch and changes to the new branch
+git branch                      => displays the branches 
